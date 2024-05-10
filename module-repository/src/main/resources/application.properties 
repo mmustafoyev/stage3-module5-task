@@ -1,0 +1,12 @@
+spring.datasource.url=jdbc:postgresql://localhost:5432/mjc_db
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.username=mjcstage3
+spring.datasource.password=stage3MJC
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# Configuration Hibernate
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.show_sql=true
+
+server.port=8081
