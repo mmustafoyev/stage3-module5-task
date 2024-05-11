@@ -107,11 +107,11 @@ public class CommentController {
         return commentService.update(commentDtoRequest);
     }
 
-    @PatchMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public CommentDtoResponse patch(@PathVariable Long id, @RequestBody CommentDtoRequest updateRequest) {
-        return commentService.update(updateRequest);
-    }
+//    @PatchMapping("/{id}")
+//    @ResponseStatus(HttpStatus.OK)
+//    public CommentDtoResponse patch(@PathVariable Long id, @RequestBody CommentDtoRequest updateRequest) {
+//        return commentService.update(updateRequest);
+//    }
 
     @ApiResponses(
             value ={
