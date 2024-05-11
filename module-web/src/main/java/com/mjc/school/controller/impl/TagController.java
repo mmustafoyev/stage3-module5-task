@@ -108,6 +108,21 @@ public class TagController {
     }
 
 
+    @ApiResponses(
+            value ={
+                    @ApiResponse(code = 200, message = "OK"),
+                    @ApiResponse(code = 204, message = "NO CONTENT"),
+                    @ApiResponse(code = 404, message = "NOT FOUND")
+
+            }
+    )
+    @ApiOperation(value = "UPDATE TAGS", response = TagDtoResponse.class)
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public TagDtoResponse patch(@PathVariable Long id, @RequestBody TagDtoRequest updateRequest) {
+        return tagService.update(updateRequest);
+    }
+
 
     @ApiResponses(
             value ={

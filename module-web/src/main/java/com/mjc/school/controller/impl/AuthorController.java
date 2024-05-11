@@ -108,7 +108,20 @@ public class AuthorController {
         return authorService.update(authorDtoRequest);
     }
 
+    @ApiResponses(
+            value ={
+                    @ApiResponse(code = 200, message = "OK"),
+                    @ApiResponse(code = 204, message = "NO CONTENT"),
+                    @ApiResponse(code = 404, message = "NOT FOUND")
 
+            }
+    )
+    @ApiOperation(value = "UPDATE AUTHOR", response = AuthorDtoResponse.class)
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public AuthorDtoResponse patch(@PathVariable Long id, @RequestBody AuthorDtoRequest updateRequest) {
+        return authorService.update(updateRequest);
+    }
 
     @ApiResponses(
             value ={

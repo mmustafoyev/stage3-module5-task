@@ -109,6 +109,22 @@ public class NewsController {
         return newsService.update(newsDtoRequest);
     }
 
+
+    @ApiResponses(
+            value ={
+                    @ApiResponse(code = 200, message = "OK"),
+                    @ApiResponse(code = 204, message = "NO CONTENT"),
+                    @ApiResponse(code = 404, message = "NOT FOUND")
+
+            }
+    )
+    @ApiOperation(value = "UPDATE NEWS", response = NewsDtoResponse.class)
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public NewsDtoResponse patch(@PathVariable Long id, @RequestBody NewsDtoRequest updateRequest) {
+        return newsService.update(updateRequest);
+    }
+
     @ApiResponses(
             value ={
                     @ApiResponse(code = 200, message = "OK"),

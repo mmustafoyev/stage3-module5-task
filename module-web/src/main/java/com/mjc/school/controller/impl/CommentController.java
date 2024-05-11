@@ -107,7 +107,20 @@ public class CommentController {
         return commentService.update(commentDtoRequest);
     }
 
+    @ApiResponses(
+            value ={
+                    @ApiResponse(code = 200, message = "OK"),
+                    @ApiResponse(code = 204, message = "NO CONTENT"),
+                    @ApiResponse(code = 404, message = "NOT FOUND")
 
+            }
+    )
+    @ApiOperation(value = "UPDATE COMMENTS", response = CommentDtoResponse.class)
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public CommentDtoResponse patch(@PathVariable Long id, @RequestBody CommentDtoRequest updateRequest) {
+        return commentService.update(updateRequest);
+    }
 
     @ApiResponses(
             value ={
