@@ -108,11 +108,6 @@ public class NewsController {
     public NewsDtoResponse updateNews(@PathVariable Long id, @RequestBody NewsDtoRequest newsDtoRequest) {
         return newsService.update(newsDtoRequest);
     }
-//    @PatchMapping("/{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public NewsDtoResponse patch(@PathVariable Long id, @RequestBody NewsDtoRequest updateRequest) {
-//        return newsService.update(updateRequest);
-//    }
 
     @ApiResponses(
             value ={

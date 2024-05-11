@@ -108,11 +108,7 @@ public class AuthorController {
         return authorService.update(authorDtoRequest);
     }
 
-//    @PatchMapping("/{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public AuthorDtoResponse patch(@PathVariable Long id, @RequestBody AuthorDtoRequest updateRequest) {
-//        return authorService.update(updateRequest);
-//    }
+
 
     @ApiResponses(
             value ={
